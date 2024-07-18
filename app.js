@@ -110,18 +110,18 @@ function swapDiagonals(matrix) {
     }
   }
   for (let i = 0; i < matrix.length; i++) {
+    let arr_item = []
     for (let j = 0; j < matrix.length; j++) {
       if (i == j) {
-        // new_arr[i][j] = yordamchid[i]
-        console.log(yordamchid[i]);
+        arr_item.push(yordamchid[i])
       } else if (i + j + 1 == matrix.length) {
-        // new_arr[i][j] = asosiyd[i]
-        // console.log("qo'shimcha");
+        arr_item.push(asosiyd[i])
       }
       else {
-        // new_arr[i][j] = matrix[i][j]
+        arr_item.push(matrix[i][j])
       }
     }
+    new_arr.push(arr_item)
   }
   return new_arr
 }
@@ -131,3 +131,6 @@ console.log(swapDiagonals([
   [7, 8, 9, 10],
   [7, 8, 9, 11]
 ]));
+
+
+
