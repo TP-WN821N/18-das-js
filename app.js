@@ -125,12 +125,24 @@ function swapDiagonals(matrix) {
   }
   return new_arr
 }
-console.log(swapDiagonals([
-  [1, 2, 3, 4],
-  [4, 5, 6, 7],
-  [7, 8, 9, 10],
-  [7, 8, 9, 11]
-]));
+// console.log(swapDiagonals([
+//   [1, 2, 3, 4],
+//   [4, 5, 6, 7],
+//   [7, 8, 9, 10],
+//   [7, 8, 9, 11]
+// ]));
 
-
-
+// 8.Berilgan massivdagi barcha elementlarning eng katta umumiy bo'luvchisini toping.
+const EKUB = (array = []) => {
+  const twoItemEKUB = (a, b) => {
+    while (b) {
+      [a, b] = [b, a % b]
+    }
+    return a
+  }
+  const arr_twoItems = (arr = []) => {
+    return arr.reduce((a, b) => twoItemEKUB(a, b))
+  }
+  return arr_twoItems(array)
+}
+console.log(EKUB([7, 14, 21]));
